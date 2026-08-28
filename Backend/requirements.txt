@@ -6,3 +6,4 @@ python-jose
 passlib
 google-genai
 python-multipart
+pwdlib[argon2]
