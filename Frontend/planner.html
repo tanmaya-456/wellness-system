@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Daily Planner | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="planner.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+<main class="planner-container">
+
+    <section class="planner-card">
+
+
+        <!-- HEADER -->
+
+        <div class="planner-header">
+
+            <div class="planner-icon">
+                📅
+            </div>
+
+            <div>
+
+                <p class="eyebrow">
+                    YOUR PERSONAL PLAN
+                </p>
+
+                <h1>
+                    Today's Planner
+                </h1>
+
+                <p id="dateText">
+                    Loading...
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- WELLNESS SUMMARY -->
+
+        <div
+            id="wellnessSummary"
+            class="wellness-summary"
+        >
+
+            <div>
+
+                <span>
+                    😊 Mood
+                </span>
+
+                <strong id="moodValue">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    😰 Stress
+                </span>
+
+                <strong id="stressValue">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ⚡ Energy
+                </span>
+
+                <strong id="energyValue">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    😴 Sleep
+                </span>
+
+                <strong id="sleepValue">
+                    —
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- TIMETABLE MESSAGE -->
+
+        <div
+            id="timetableMessage"
+            class="timetable-message"
+        ></div>
+
+
+        <!-- DAILY CHANGES -->
+
+        <div id="changesSummary" class="changes-summary"></div>
+
+
+        <!-- PLAN -->
+
+        <section>
+
+            <div class="section-heading">
+
+                <h2>
+                    Your Schedule
+                </h2>
+
+                <button
+                    id="refreshButton"
+                    class="refresh-button"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div
+                id="planContainer"
+                class="plan-container"
+            >
+
+                <div class="loading">
+                    Loading your plan...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+        <a
+            href="dashboard.html"
+            class="back-link"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </section>
+
+</main>
+
+
+<script src="planner.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

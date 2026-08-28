@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Screen Time | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="screen-time.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="screen-container">
+
+        <div class="screen-card">
+
+            <div class="page-header">
+
+                <div class="icon">
+                    📱
+                </div>
+
+                <h1>
+                    Screen Time
+                </h1>
+
+                <p>
+                    Understand where your screen time goes
+                    throughout the day.
+                </p>
+
+            </div>
+
+
+            <!-- SUMMARY -->
+
+            <div class="summary-card">
+
+                <span>
+                    Today's recorded screen time
+                </span>
+
+                <strong id="totalScreenTime">
+                    0h 0m
+                </strong>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="screenTimeForm">
+
+                <div class="form-group">
+
+                    <label for="deviceType">
+                        Device
+                    </label>
+
+                    <select id="deviceType" required>
+
+                        <option value="">
+                            Select device
+                        </option>
+
+                        <option value="phone">
+                            📱 Phone
+                        </option>
+
+                        <option value="laptop">
+                            💻 Laptop
+                        </option>
+
+                        <option value="tablet">
+                            📲 Tablet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="appName">
+                        App / Website
+                    </label>
+
+                    <input
+                        type="text"
+                        id="appName"
+                        placeholder="e.g. YouTube"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="durationMinutes">
+                        Usage Duration
+                    </label>
+
+                    <div class="duration-input">
+
+                        <input
+                            type="number"
+                            id="durationMinutes"
+                            min="1"
+                            placeholder="30"
+                            required
+                        >
+
+                        <span>
+                            minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="source">
+                        Data Source
+                    </label>
+
+                    <select id="source" required>
+
+                        <option value="manual">
+                            Manual entry
+                        </option>
+
+                        <option value="imported">
+                            Imported data
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="primary-button"
+                >
+                    Save Screen Time
+                </button>
+
+            </form>
+
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- RECORDS -->
+
+            <div class="records-section">
+
+                <h2>
+                    Recent Usage
+                </h2>
+
+                <div id="recordsContainer">
+
+                    <p class="empty">
+                        No screen-time records yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUCCESS POPUP -->
+
+            <div
+                id="successPopup"
+                class="popup-overlay"
+            >
+
+                <div class="popup-card">
+
+                    <div class="popup-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Screen Time Saved!
+                    </h2>
+
+                    <p>
+                        Your screen-time record has been saved.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="closePopup"
+                        class="primary-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="screen-time.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

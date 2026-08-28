@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Daily Check-in | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="checkin.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="page-container">
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Dashboard
+            </a>
+
+            <div class="header-content">
+
+                <div class="header-icon">
+                    🧠
+                </div>
+
+                <div>
+
+                    <p class="eyebrow">
+                        DAILY WELLNESS
+                    </p>
+
+                    <h1>
+                        How are you doing today?
+                    </h1>
+
+                    <p class="subtitle">
+                        Take a moment to check in with yourself.
+                        There are no right or wrong answers.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CHECK-IN FORM -->
+
+        <form id="checkinForm">
+
+
+            <!-- MOOD -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            😊 Mood
+                        </h2>
+
+                        <p>
+                            How are you feeling overall today?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="moodDisplay"
+                        class="score-display"
+                    >
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="range-container">
+
+                    <span>Low</span>
+
+                    <input
+                        type="range"
+                        id="mood"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                    <span>Great</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- STRESS -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            😰 Stress
+                        </h2>
+
+                        <p>
+                            How stressed have you been feeling?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="stressDisplay"
+                        class="score-display"
+                    >
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="range-container">
+
+                    <span>Relaxed</span>
+
+                    <input
+                        type="range"
+                        id="stress"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                    <span>Very stressed</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SLEEP -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            😴 Sleep
+                        </h2>
+
+                        <p>
+                            How many hours did you sleep last night?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="sleepDisplay"
+                        class="score-display"
+                    >
+                        7 h
+                    </span>
+
+                </div>
+
+
+                <div class="sleep-input">
+
+                    <input
+                        type="number"
+                        id="sleepHours"
+                        min="0"
+                        max="24"
+                        step="0.5"
+                        value="7"
+                    >
+
+                    <span>
+                        hours
+                    </span>
+
+                </div>
+
+
+                <div class="question-small">
+
+                    <label>
+                        How would you rate your sleep quality?
+                    </label>
+
+                    <div class="quality-options">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="sleepQuality"
+                                value="3"
+                            >
+                            Poor
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="sleepQuality"
+                                value="5"
+                                checked
+                            >
+                            Okay
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="sleepQuality"
+                                value="7"
+                            >
+                            Good
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="sleepQuality"
+                                value="10"
+                            >
+                            Excellent
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ENERGY -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            ⚡ Energy
+                        </h2>
+
+                        <p>
+                            How energetic do you feel today?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="energyDisplay"
+                        class="score-display"
+                    >
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="range-container">
+
+                    <span>Exhausted</span>
+
+                    <input
+                        type="range"
+                        id="energy"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                    <span>Full of energy</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACADEMIC WORKLOAD -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            📚 Academic workload
+                        </h2>
+
+                        <p>
+                            How heavy does your academic workload feel?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="workloadDisplay"
+                        class="score-display"
+                    >
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="range-container">
+
+                    <span>Light</span>
+
+                    <input
+                        type="range"
+                        id="academicWorkload"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                    <span>Overwhelming</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOCIAL CONNECTION -->
+
+            <section class="checkin-card">
+
+                <div class="question-header">
+
+                    <div>
+
+                        <h2>
+                            🧑‍🤝‍🧑 Social connection
+                        </h2>
+
+                        <p>
+                            How connected do you feel with people around you?
+                        </p>
+
+                    </div>
+
+                    <span
+                        id="socialDisplay"
+                        class="score-display"
+                    >
+                        5
+                    </span>
+
+                </div>
+
+
+                <div class="range-container">
+
+                    <span>Disconnected</span>
+
+                    <input
+                        type="range"
+                        id="socialConnection"
+                        min="1"
+                        max="10"
+                        value="5"
+                    >
+
+                    <span>Very connected</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUBMIT -->
+
+            <section class="submit-section">
+
+                <p>
+                    Your information is private and used only
+                    to understand your personal wellness patterns.
+                </p>
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                >
+                    Save Today's Check-in
+                </button>
+
+            </section>
+
+
+        </form>
+
+
+        <!-- SUCCESS POPUP -->
+
+        <div
+            id="successPopup"
+            class="popup-overlay"
+        >
+
+            <div class="popup-card">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Check-in Saved!
+                </h2>
+
+                <p>
+                    Your wellness data has been recorded successfully.
+                </p>
+
+                <button
+                    type="button"
+                    id="dashboardButton"
+                >
+                    View Dashboard
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ERROR MESSAGE -->
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+    </main>
+
+
+    <script src="checkin.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

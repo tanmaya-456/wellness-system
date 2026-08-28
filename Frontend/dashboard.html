@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Student Wellness</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">🧠</div>
+
+            <div>
+                <strong>Wellness</strong>
+                <span>Student Companion</span>
+            </div>
+        </div>
+
+
+        <nav>
+
+    <a href="dashboard.html">
+        🏠 Dashboard
+    </a>
+
+    <a href="checkin.html">
+        📝 Daily Check-in
+    </a>
+    <a href="planner.html">
+    📅 Daily Planner
+</a>
+
+    <a href="timetable.html">
+        🗓️ Timetable
+    </a>
+
+    <a href="activity.html">
+        🏃 Activity
+    </a>
+
+    <a href="journal.html">
+        📖 Journal
+    </a>
+
+    <a href="analytics.html">
+        📊 Analytics
+    </a>
+
+    <a href="ai-insights.html">
+        🤖 AI Insights
+    </a>
+
+</nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="#" class="nav-item">
+                <span>⚙️</span>
+                Settings
+            </a>
+
+            <button id="logoutButton" class="logout-button">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="small-label">YOUR WELLNESS SPACE</p>
+
+                <h1>
+                    Good morning, <span id="username">Student</span> 👋
+                </h1>
+            </div>
+
+            <div class="profile">
+                <div class="profile-avatar" id="avatar">
+                    S
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- DAILY MOTIVATION -->
+        <section class="motivation-card" aria-label="Daily motivational quote">
+            <div class="motivation-mark">“</div>
+            <div class="motivation-content">
+                <p class="motivation-label">TODAY'S MOTIVATION</p>
+                <blockquote id="dailyQuote">Believe you can, and you’re halfway there.</blockquote>
+                <p id="quoteAuthor" class="quote-author">— Theodore Roosevelt</p>
+            </div>
+            <div class="motivation-spark">✦</div>
+        </section>
+
+
+        <!-- QUICK ACTION -->
+
+        <section class="welcome-card">
+
+            <div>
+
+                <p class="eyebrow">
+                    TODAY
+                </p>
+
+                <h2>
+                    How are you doing today?
+                </h2>
+
+                <p>
+                    Take a moment to check in with yourself.
+                    Your answers help us understand your personal patterns.
+                </p>
+
+                <a href="checkin.html" class="primary-button">
+                    Complete Check-in →
+                </a>
+
+            </div>
+
+            <div class="welcome-icon">
+                🌱
+            </div>
+
+        </section>
+
+
+        <!-- METRICS -->
+
+        <section>
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Wellness overview</h2>
+                    <p>Your latest available information</p>
+                </div>
+
+            </div>
+
+
+            <div class="metrics-grid">
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span class="metric-icon mood">😊</span>
+                        <span class="metric-title">Mood</span>
+                    </div>
+
+                    <strong id="moodValue">--</strong>
+
+                    <span class="metric-scale">out of 10</span>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span class="metric-icon stress">😰</span>
+                        <span class="metric-title">Stress</span>
+                    </div>
+
+                    <strong id="stressValue">--</strong>
+
+                    <span class="metric-scale">out of 10</span>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span class="metric-icon energy">⚡</span>
+                        <span class="metric-title">Energy</span>
+                    </div>
+
+                    <strong id="energyValue">--</strong>
+
+                    <span class="metric-scale">out of 10</span>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span class="metric-icon sleep">😴</span>
+                        <span class="metric-title">Sleep</span>
+                    </div>
+
+                    <strong id="sleepValue">--</strong>
+
+                    <span class="metric-scale">hours</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- WELLNESS CHART -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Wellness trend</h2>
+                        <p>Your recent check-ins</p>
+                    </div>
+
+                    <span class="source-badge">
+                        Self-report
+                    </span>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas id="wellnessChart"></canvas>
+
+                    <div
+                        id="chartEmpty"
+                        class="empty-state"
+                    >
+                        Complete a few check-ins to see your
+                        personal wellness trends.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHAT CHANGED -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>What changed?</h2>
+                        <p>Compared with your recent pattern</p>
+                    </div>
+
+                    <span class="insight-icon">
+                        🔎
+                    </span>
+
+                </div>
+
+
+                <div id="changesContainer">
+
+                    <div class="empty-insight">
+
+                        <span>📊</span>
+
+                        <p>
+                            More data is needed to identify
+                            meaningful changes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DAILY INFORMATION -->
+
+        <section class="dashboard-grid">
+
+
+            <!-- SCHEDULE -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Today's schedule</h2>
+                        <p>Your timetable</p>
+                    </div>
+
+                    <span>📅</span>
+
+                </div>
+
+
+                <div id="scheduleContainer">
+
+                    <div class="empty-insight">
+
+                        <span>📅</span>
+
+                        <p>
+                            Your timetable will appear here
+                            once you add it.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIGITAL WELLBEING -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+                        <h2>Digital wellbeing</h2>
+                        <p>Device usage</p>
+                    </div>
+
+                    <span>📱</span>
+
+                </div>
+
+
+                <div class="digital-placeholder">
+
+                    <div class="big-placeholder-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Screen-time data
+                    </h3>
+
+                    <p>
+                        Connect your phone or desktop companion
+                        to see app usage and screen-time patterns.
+                    </p>
+
+                    <button class="secondary-button">
+                        Coming soon
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- TODAY AT A GLANCE -->
+
+        <section class="dashboard-grid">
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Today's plan</h2>
+                        <p>Classes, breaks and wellness time</p>
+                    </div>
+                    <span>🧭</span>
+                </div>
+
+                <div id="plannerSummary">
+                    <div class="empty-insight">
+                        <span>🧭</span>
+                        <p>Loading today's plan...</p>
+                    </div>
+                </div>
+
+                <a href="planner.html" class="dashboard-link">
+                    Open Daily Planner →
+                </a>
+
+            </div>
+
+            <div class="panel">
+
+                <div class="panel-header">
+                    <div>
+                        <h2>Wellness watch</h2>
+                        <p>A simple pattern-based safety check</p>
+                    </div>
+                    <span>🛡️</span>
+                </div>
+
+                <div id="riskSummary" class="risk-summary">
+                    <div class="empty-insight">
+                        <span>🛡️</span>
+                        <p>Checking your recent pattern...</p>
+                    </div>
+                </div>
+
+                <a href="ai-insights.html" class="dashboard-link">
+                    View AI Insights →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- AI INSIGHT -->
+
+        <section class="ai-card">
+
+            <div class="ai-icon">
+                ✨
+            </div>
+
+
+            <div class="ai-content">
+
+                <span class="ai-label">
+                    PERSONAL AI COMPANION
+                </span>
+
+                <h2>
+                    Your personalized insights will appear here.
+                </h2>
+
+                <p>
+                    As you provide more information about your
+                    mood, sleep, habits, schedule and activity,
+                    the system will look for meaningful patterns
+                    and provide personalized suggestions.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRIVACY -->
+
+        <div class="privacy-footer">
+
+            🔐 Your wellness information is private and
+            associated only with your account.
+
+        </div>
+
+    </main>
+
+
+    <script src="dashboard.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

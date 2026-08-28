@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Wellness Insights</title>
+
+    <link
+        rel="stylesheet"
+        href="ai-insights.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="ai-container">
+
+        <div class="ai-card">
+
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div class="ai-icon">
+                    🤖
+                </div>
+
+                <h1>
+                    AI Wellness Insights
+                </h1>
+
+                <p>
+                    Personalized insights based on your wellness patterns.
+                </p>
+
+            </div>
+
+
+            <!-- DISCLAIMER -->
+
+            <div class="disclaimer">
+
+                <span>
+                    ℹ️
+                </span>
+
+                <p>
+                    These insights are based on your recorded data
+                    and are not a medical diagnosis.
+                </p>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loading"
+                class="loading"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+                    Analyzing your wellness data...
+                </p>
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div
+                id="insightsContent"
+                class="insights-content"
+            >
+
+
+                <!-- SUMMARY -->
+
+                <section class="insight-section">
+
+                    <div class="section-title">
+
+                        <span>
+                            🧠
+                        </span>
+
+                        <h2>
+                            Overall Summary
+                        </h2>
+
+                    </div>
+
+
+                    <div class="summary-box">
+
+                        <p id="summary">
+                            —
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- PATTERNS -->
+
+                <section class="insight-section">
+
+                    <div class="section-title">
+
+                        <span>
+                            🔎
+                        </span>
+
+                        <h2>
+                            Patterns Detected
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="patterns"
+                        class="insight-list"
+                    ></div>
+
+                </section>
+
+
+                <!-- SUGGESTIONS -->
+
+                <section class="insight-section">
+
+                    <div class="section-title">
+
+                        <span>
+                            💡
+                        </span>
+
+                        <h2>
+                            Suggestions
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="suggestions"
+                        class="insight-list"
+                    ></div>
+
+                </section>
+
+
+                <!-- WATCH -->
+
+                <section class="insight-section">
+
+                    <div class="section-title">
+
+                        <span>
+                            👀
+                        </span>
+
+                        <h2>
+                            Things to Watch
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        id="watchFor"
+                        class="insight-list"
+                    ></div>
+
+                </section>
+
+
+                <!-- SUPPORT -->
+
+                <section class="support-section">
+
+                    <div class="support-icon">
+                        💚
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            A Note for You
+                        </h2>
+
+                        <p id="supportNote">
+                            —
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- REFRESH -->
+
+                <button
+                    id="refreshButton"
+                    class="primary-button"
+                >
+                    🔄 Refresh Insights
+                </button>
+
+
+            </div>
+
+
+            <!-- ERROR -->
+
+            <div
+                id="errorMessage"
+                class="error-message"
+            ></div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="ai-insights.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

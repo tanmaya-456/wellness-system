@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Journal | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="journal.css"
+    >
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+<body>
+
+    <main class="journal-container">
+
+        <div class="journal-card">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div class="icon">
+                    📔
+                </div>
+
+                <h1>
+                    Your Journal
+                </h1>
+
+                <p>
+                    Write freely about your day, thoughts,
+                    experiences, or anything on your mind.
+                </p>
+
+            </div>
+
+
+            <!-- JOURNAL FORM -->
+
+            <form id="journalForm">
+
+                <div class="form-group">
+
+                    <label for="journalContent">
+                        What's on your mind?
+                    </label>
+
+                    <textarea
+                        id="journalContent"
+                        placeholder="Write about your day..."
+                        rows="8"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="primary-button"
+                >
+                    Save Journal Entry
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- PREVIOUS ENTRIES -->
+
+            <section class="entries-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Previous Entries
+                    </h2>
+
+                </div>
+
+                <div id="entriesContainer">
+
+                    <p class="empty">
+                        No journal entries yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUCCESS POPUP -->
+
+            <div
+                id="successPopup"
+                class="popup-overlay"
+            >
+
+                <div class="popup-card">
+
+                    <div class="popup-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Journal Saved!
+                    </h2>
+
+                    <p>
+                        Your journal entry has been saved successfully.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="closePopup"
+                        class="primary-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="journal.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

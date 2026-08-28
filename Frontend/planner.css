@@ -1,0 +1,493 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #172033;
+
+}
+
+
+.planner-container {
+
+    min-height: 100vh;
+
+    padding: 35px 20px;
+
+}
+
+
+.planner-card {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(
+            20,
+            30,
+            60,
+            0.08
+        );
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.planner-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.planner-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eef0ff;
+
+    border-radius: 18px;
+
+    font-size: 32px;
+
+}
+
+
+.eyebrow {
+
+    margin: 0 0 5px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: #6b7280;
+
+}
+
+
+.planner-header h1 {
+
+    margin: 0;
+
+    font-size: 30px;
+
+}
+
+
+.planner-header p:last-child {
+
+    margin: 5px 0 0;
+
+    color: #6b7280;
+
+}
+
+
+/* =========================================================
+   WELLNESS
+========================================================= */
+
+.wellness-summary {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    background: #f5f6ff;
+
+    border-radius: 14px;
+
+}
+
+
+.wellness-summary div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+}
+
+
+.wellness-summary span {
+
+    font-size: 13px;
+
+    color: #6b7280;
+
+}
+
+
+.wellness-summary strong {
+
+    font-size: 20px;
+
+    color: #4f46e5;
+
+}
+
+
+/* =========================================================
+   TIMETABLE MESSAGE
+========================================================= */
+
+.timetable-message {
+
+    padding: 14px 16px;
+
+    margin-bottom: 25px;
+
+    background: #eefcf5;
+
+    border: 1px solid #c7eed9;
+
+    border-radius: 12px;
+
+    color: #276749;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+
+.section-heading h2 {
+
+    margin: 0;
+
+    font-size: 21px;
+
+}
+
+
+.refresh-button {
+
+    border: none;
+
+    background: #eef0ff;
+
+    color: #4f46e5;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   PLAN
+========================================================= */
+
+.plan-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.plan-item {
+
+    display: grid;
+
+    grid-template-columns:
+        115px 1fr;
+
+    gap: 18px;
+
+    padding: 17px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 13px;
+
+    background: #fff;
+
+}
+
+
+.plan-time {
+
+    font-weight: 700;
+
+    color: #4f46e5;
+
+    font-size: 14px;
+
+    padding-top: 2px;
+
+}
+
+
+.plan-title {
+
+    margin: 0 0 5px;
+
+    font-size: 16px;
+
+}
+
+
+.plan-description {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+.plan-item.class-item {
+
+    border-left:
+        4px solid #4f46e5;
+
+}
+
+
+.plan-item.break-item {
+
+    border-left:
+        4px solid #f59e0b;
+
+}
+
+
+.plan-item.wellness-item {
+
+    border-left:
+        4px solid #16a34a;
+
+}
+
+
+.plan-item.personal-item {
+
+    border-left:
+        4px solid #8b5cf6;
+
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading {
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+
+    text-align: center;
+
+}
+
+
+.error-message.show {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back-link {
+
+    display: block;
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    color: #59627a;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .planner-card {
+
+        padding: 22px;
+
+    }
+
+
+    .wellness-summary {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .plan-item {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .planner-header h1 {
+
+        font-size: 25px;
+
+    }
+
+}
+/* =========================================================
+   DAILY CHANGES
+========================================================= */
+
+.changes-summary {
+    margin: -8px 0 25px;
+}
+
+.changes-summary-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #4f46e5;
+}
+
+.change-chip {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    padding: 10px 12px;
+    margin-bottom: 7px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fafbff;
+    font-size: 12px;
+}
+
+.change-chip strong {
+    text-transform: capitalize;
+    color: #4f46e5;
+}
+
+.change-chip span {
+    font-weight: 600;
+}
+
+.change-chip small {
+    color: #6b7280;
+}

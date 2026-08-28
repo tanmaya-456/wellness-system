@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Analytics | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="analytics.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+<body>
+
+    <main class="analytics-container">
+
+        <div class="analytics-card">
+
+            <div class="page-header">
+
+                <div class="icon">
+                    📊
+                </div>
+
+                <h1>
+                    Wellness Analytics
+                </h1>
+
+                <p>
+                    Understand your wellness patterns over time.
+                </p>
+
+            </div>
+
+
+            <!-- WELLNESS SCORE -->
+
+            <section class="score-section">
+
+                <div class="score-circle">
+
+                    <strong id="wellnessScore">
+                        —
+                    </strong>
+
+                    <span>
+                        / 100
+                    </span>
+
+                </div>
+
+                <div class="score-text">
+
+                    <h2>
+                        Overall Wellness
+                    </h2>
+
+                    <p id="scoreDescription">
+                        Collecting enough data to calculate your wellness score.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- WELLNESS AVERAGES -->
+
+            <section class="section">
+
+                <h2>
+                    Wellness Overview
+                </h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span>
+                            😊 Average Mood
+                        </span>
+
+                        <strong id="averageMood">
+                            —
+                        </strong>
+
+                        <small>
+                            / 10
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            😰 Average Stress
+                        </span>
+
+                        <strong id="averageStress">
+                            —
+                        </strong>
+
+                        <small>
+                            / 10
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            ⚡ Average Energy
+                        </span>
+
+                        <strong id="averageEnergy">
+                            —
+                        </strong>
+
+                        <small>
+                            / 10
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            😴 Average Sleep
+                        </span>
+
+                        <strong id="averageSleep">
+                            —
+                        </strong>
+
+                        <small>
+                            hours
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WELLNESS TREND -->
+
+            <section class="section">
+
+                <h2>
+                    Wellness Trend
+                </h2>
+
+                <p class="chart-description">
+                    Your mood, stress and energy across recorded check-ins.
+                </p>
+
+                <div class="chart-container">
+
+                    <canvas id="wellnessChart"></canvas>
+
+                </div>
+
+                <div class="legend">
+
+                    <span>
+                        <i class="mood-dot"></i>
+                        Mood
+                    </span>
+
+                    <span>
+                        <i class="stress-dot"></i>
+                        Stress
+                    </span>
+
+                    <span>
+                        <i class="energy-dot"></i>
+                        Energy
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- HABITS -->
+
+            <section class="section">
+
+                <h2>
+                    Daily Habits
+                </h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span>
+                            📚 Study
+                        </span>
+
+                        <strong id="studyAverage">
+                            —
+                        </strong>
+
+                        <small>
+                            min/day
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            🏃 Exercise
+                        </span>
+
+                        <strong id="exerciseAverage">
+                            —
+                        </strong>
+
+                        <small>
+                            min/day
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            💧 Water
+                        </span>
+
+                        <strong id="waterAverage">
+                            —
+                        </strong>
+
+                        <small>
+                            glasses/day
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            🧘 Meditation
+                        </span>
+
+                        <strong id="meditationAverage">
+                            —
+                        </strong>
+
+                        <small>
+                            min/day
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DIGITAL LIFE -->
+
+            <section class="section">
+
+                <h2>
+                    Digital Life
+                </h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span>
+                            📱 Screen Time
+                        </span>
+
+                        <strong id="screenTime">
+                            —
+                        </strong>
+
+                        <small>
+                            minutes
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            ⭐ Most Used App
+                        </span>
+
+                        <strong
+                            id="mostUsedApp"
+                            class="app-name"
+                        >
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ACTIVITY + WEARABLE -->
+
+            <section class="section">
+
+                <h2>
+                    Physical Activity
+                </h2>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <span>
+                            🏃 Recorded Activity
+                        </span>
+
+                        <strong id="totalActivity">
+                            —
+                        </strong>
+
+                        <small>
+                            minutes
+                        </small>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <span>
+                            🚶 Average Steps
+                        </span>
+
+                        <strong id="averageSteps">
+                            —
+                        </strong>
+
+                        <small>
+                            steps
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DATA SUMMARY -->
+
+            <section class="section">
+
+                <h2>
+                    Your Data
+                </h2>
+
+                <div class="data-summary">
+
+                    <div>
+                        🧠 Wellness records:
+                        <strong id="wellnessRecords">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        🌱 Habit records:
+                        <strong id="habitRecords">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        📱 Screen-time records:
+                        <strong id="screenRecords">
+                            0
+                        </strong>
+                    </div>
+
+                    <div>
+                        ⌚ Wearable records:
+                        <strong id="wearableRecords">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="analytics.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

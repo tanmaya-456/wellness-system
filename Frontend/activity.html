@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Activity | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="activity.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="activity-container">
+
+        <div class="activity-card">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div class="icon">
+                    🏃
+                </div>
+
+                <h1>
+                    Activity Tracking
+                </h1>
+
+                <p>
+                    Keep track of how you spend your active
+                    and productive time.
+                </p>
+
+            </div>
+
+
+            <!-- TODAY SUMMARY -->
+
+            <div class="summary-card">
+
+                <div>
+
+                    <span>
+                        Today's recorded activity
+                    </span>
+
+                    <strong id="totalActivity">
+                        0 min
+                    </strong>
+
+                </div>
+
+                <div class="summary-icon">
+                    ⚡
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVITY FORM -->
+
+            <form id="activityForm">
+
+
+                <div class="form-group">
+
+                    <label for="activityType">
+                        Activity
+                    </label>
+
+                    <select
+                        id="activityType"
+                        required
+                    >
+
+                        <option value="">
+                            Select activity
+                        </option>
+
+                        <option value="walking">
+                            🚶 Walking
+                        </option>
+
+                        <option value="running">
+                            🏃 Running
+                        </option>
+
+                        <option value="workout">
+                            🏋️ Workout
+                        </option>
+
+                        <option value="cycling">
+                            🚴 Cycling
+                        </option>
+
+                        <option value="yoga">
+                            🧘 Yoga
+                        </option>
+
+                        <option value="sports">
+                            ⚽ Sports
+                        </option>
+
+                        <option value="studying">
+                            📚 Studying
+                        </option>
+
+                        <option value="other">
+                            🎨 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="durationMinutes">
+                        Duration
+                    </label>
+
+                    <div class="duration-input">
+
+                        <input
+                            type="number"
+                            id="durationMinutes"
+                            min="1"
+                            placeholder="30"
+                            required
+                        >
+
+                        <span>
+                            minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="primary-button"
+                >
+                    Save Activity
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- RECENT ACTIVITIES -->
+
+            <section class="records-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Recent Activities
+                    </h2>
+
+                </div>
+
+
+                <div id="recordsContainer">
+
+                    <p class="empty">
+                        No activities recorded yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUCCESS POPUP -->
+
+            <div
+                id="successPopup"
+                class="popup-overlay"
+            >
+
+                <div class="popup-card">
+
+                    <div class="popup-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Activity Saved!
+                    </h2>
+
+                    <p>
+                        Your activity has been recorded successfully.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="closePopup"
+                        class="primary-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="activity.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,503 @@
+
+/* =========================================================
+   GLOBAL THEME
+========================================================= */
+:root {
+    --theme-bg: #f5f7fb;
+    --theme-surface: #ffffff;
+    --theme-surface-soft: #f9fafb;
+    --theme-text: #172033;
+    --theme-muted: #6b7280;
+    --theme-border: #e5e7eb;
+    --theme-primary: #4f46e5;
+    --theme-input: #ffffff;
+}
+
+body {
+    transition: background-color .2s ease, color .2s ease;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 18px;
+    z-index: 9999;
+    border: 1px solid var(--theme-border);
+    background: var(--theme-surface);
+    color: var(--theme-text);
+    border-radius: 999px;
+    padding: 9px 13px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgba(20,30,60,.08);
+}
+
+.theme-toggle:hover {
+    transform: translateY(-1px);
+}
+
+body.dark-mode {
+    --theme-bg: #0f172a;
+    --theme-surface: #172033;
+    --theme-surface-soft: #1e293b;
+    --theme-text: #e5e7eb;
+    --theme-muted: #a8b0bf;
+    --theme-border: #334155;
+    --theme-input: #111827;
+    background: #0f172a !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode .theme-toggle {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .panel,
+body.dark-mode .metric-card,
+body.dark-mode .ai-card,
+body.dark-mode .welcome-card,
+body.dark-mode .planner-card,
+body.dark-mode .ai-container .ai-card,
+body.dark-mode .card,
+body.dark-mode .container-card {
+    background: #172033 !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #111827 !important;
+    color: #e5e7eb !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode a {
+    color: #a5b4fc;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode strong,
+body.dark-mode label {
+    color: #f8fafc;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode .muted,
+body.dark-mode .metric-title,
+body.dark-mode .metric-scale,
+body.dark-mode .panel-header p,
+body.dark-mode .privacy-footer,
+body.dark-mode .empty-state,
+body.dark-mode .empty-insight,
+body.dark-mode .schedule-location,
+body.dark-mode .plan-description,
+body.dark-mode .planner-header p:last-child {
+    color: #a8b0bf;
+}
+
+body.dark-mode .change-item,
+body.dark-mode .schedule-item,
+body.dark-mode .plan-item,
+body.dark-mode .insight-item,
+body.dark-mode .summary-box,
+body.dark-mode .wellness-summary,
+body.dark-mode .digital-placeholder,
+body.dark-mode .source-badge,
+body.dark-mode .secondary-button {
+    background: #1e293b !important;
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .summary-box p,
+body.dark-mode .insight-item,
+body.dark-mode .support-section p {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .disclaimer {
+    background: #29251a !important;
+    border-color: #665522 !important;
+}
+
+body.dark-mode .disclaimer p {
+    color: #e8d9a5 !important;
+}
+
+body.dark-mode .support-section {
+    background: #14251d !important;
+    border-color: #28553b !important;
+}
+
+body.dark-mode .support-section p {
+    color: #b7d8c2 !important;
+}
+
+body.dark-mode .error-message {
+    background: #351b22 !important;
+    border-color: #7f2939 !important;
+    color: #fecdd3 !important;
+}
+
+body.dark-mode .timetable-message {
+    background: #13291f !important;
+    border-color: #28553b !important;
+    color: #b7d8c2 !important;
+}
+
+body.dark-mode .nav-item,
+body.dark-mode .brand,
+body.dark-mode .sidebar-bottom {
+    color: #e5e7eb;
+}
+
+@media (max-width: 700px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 10px;
+    }
+}
+
+
+/* =========================================================
+   GLOBAL DARK MODE - ALL PAGES
+   =========================================================
+   Page-specific CSS files contain hard-coded light colors.
+   These selectors intentionally override those colors so
+   dark mode affects the complete UI, not only the body.
+*/
+
+/* Main page backgrounds */
+body.dark-mode,
+body.dark-mode .page-container,
+body.dark-mode .activity-container,
+body.dark-mode .analytics-container,
+body.dark-mode .auth-container,
+body.dark-mode .checkin-container,
+body.dark-mode .habits-container,
+body.dark-mode .journal-container,
+body.dark-mode .planner-container,
+body.dark-mode .screen-container,
+body.dark-mode .timetable-container,
+body.dark-mode .wearable-container {
+    background-color: var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+/* Main cards / surfaces */
+body.dark-mode .activity-card,
+body.dark-mode .analytics-card,
+body.dark-mode .auth-card,
+body.dark-mode .checkin-card,
+body.dark-mode .habits-card,
+body.dark-mode .journal-card,
+body.dark-mode .planner-card,
+body.dark-mode .screen-card,
+body.dark-mode .wearable-card,
+body.dark-mode .upload-card,
+body.dark-mode .preview-section,
+body.dark-mode .day-section,
+body.dark-mode .change-card,
+body.dark-mode .change-form,
+body.dark-mode .entries-section,
+body.dark-mode .records-section,
+body.dark-mode .schedule-section,
+body.dark-mode .score-section,
+body.dark-mode .data-summary,
+body.dark-mode .connection-card,
+body.dark-mode .popup-card,
+body.dark-mode .card,
+body.dark-mode .container-card,
+body.dark-mode .panel,
+body.dark-mode .metric-card,
+body.dark-mode .ai-card,
+body.dark-mode .welcome-card {
+    background: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Softer nested cards */
+body.dark-mode .summary-card,
+body.dark-mode .stat-card,
+body.dark-mode .record,
+body.dark-mode .entry,
+body.dark-mode .habit-item,
+body.dark-mode .personal-item,
+body.dark-mode .class-item,
+body.dark-mode .schedule-item,
+body.dark-mode .change-item,
+body.dark-mode .event-edit-card,
+body.dark-mode .saved-event,
+body.dark-mode .plan-item,
+body.dark-mode .insight-item,
+body.dark-mode .summary-box,
+body.dark-mode .digital-placeholder,
+body.dark-mode .source-badge,
+body.dark-mode .secondary-button,
+body.dark-mode .connection-icon,
+body.dark-mode .quality-options,
+body.dark-mode .time-row,
+body.dark-mode .wellness-item,
+body.dark-mode .data-summary div,
+body.dark-mode .mini-plan-item,
+body.dark-mode .risk-box {
+    background: var(--theme-surface-soft) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .event-fields input,
+body.dark-mode .event-fields select {
+    background: var(--theme-input) !important;
+    color: var(--theme-text) !important;
+    border-color: #475569 !important;
+    caret-color: #e5e7eb;
+}
+
+body.dark-mode input:focus,
+body.dark-mode select:focus,
+body.dark-mode textarea:focus {
+    border-color: #818cf8 !important;
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, .16) !important;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Text */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode label,
+body.dark-mode strong,
+body.dark-mode .page-header h1,
+body.dark-mode .page-header h2,
+body.dark-mode .section-heading h2,
+body.dark-mode .section-header h2,
+body.dark-mode .panel-header h2,
+body.dark-mode .topbar h1,
+body.dark-mode .welcome-card h2,
+body.dark-mode .upload-content h2,
+body.dark-mode .day-section h3,
+body.dark-mode .risk-level {
+    color: #f8fafc !important;
+}
+
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode small,
+body.dark-mode .muted,
+body.dark-mode .empty,
+body.dark-mode .empty-state,
+body.dark-mode .empty-insight,
+body.dark-mode .page-header p,
+body.dark-mode .auth-subtitle,
+body.dark-mode .switch-page,
+body.dark-mode .back-link,
+body.dark-mode .chart-description,
+body.dark-mode .metric-title,
+body.dark-mode .metric-scale,
+body.dark-mode .panel-header p,
+body.dark-mode .privacy-footer,
+body.dark-mode .schedule-location,
+body.dark-mode .plan-description,
+body.dark-mode .change-label,
+body.dark-mode .risk-message,
+body.dark-mode .risk-factor,
+body.dark-mode .duration-input span,
+body.dark-mode .unit-input span,
+body.dark-mode .selected-file,
+body.dark-mode .popup-card p {
+    color: #a8b0bf !important;
+}
+
+/* Links */
+body.dark-mode a,
+body.dark-mode .back-link,
+body.dark-mode .switch-page a,
+body.dark-mode .dashboard-link {
+    color: #a5b4fc !important;
+}
+
+body.dark-mode a:hover,
+body.dark-mode .back-link:hover {
+    color: #c7d2fe !important;
+}
+
+/* Buttons */
+body.dark-mode .secondary-button,
+body.dark-mode .outline-button,
+body.dark-mode .refresh-button {
+    color: #c7d2fe !important;
+    background: #1e293b !important;
+    border-color: #475569 !important;
+}
+
+body.dark-mode .primary-button,
+body.dark-mode .button-link.primary {
+    color: #ffffff !important;
+}
+
+/* Icons / small visual blocks */
+body.dark-mode .icon,
+body.dark-mode .logo,
+body.dark-mode .ai-icon,
+body.dark-mode .brand-icon,
+body.dark-mode .header-icon,
+body.dark-mode .upload-icon,
+body.dark-mode .habit-icon,
+body.dark-mode .summary-icon,
+body.dark-mode .connection-icon,
+body.dark-mode .metric-icon,
+body.dark-mode .welcome-icon {
+    background: #202a44 !important;
+}
+
+/* Navigation */
+body.dark-mode .sidebar {
+    background: #111827 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .nav-item {
+    color: #a8b0bf !important;
+}
+
+body.dark-mode .nav-item:hover {
+    background: #1e293b !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .nav-item.active {
+    background: #252a55 !important;
+    color: #c7d2fe !important;
+}
+
+body.dark-mode .logout-button {
+    color: #a8b0bf !important;
+}
+
+body.dark-mode .sidebar-bottom {
+    border-color: #334155 !important;
+}
+
+/* Borders and separators */
+body.dark-mode .record,
+body.dark-mode .entry,
+body.dark-mode .schedule-item,
+body.dark-mode .mini-plan-item,
+body.dark-mode .saved-event,
+body.dark-mode .day-section {
+    border-color: #334155 !important;
+}
+
+/* Status / feedback */
+body.dark-mode .message.success,
+body.dark-mode .status-message.success {
+    background: #123025 !important;
+    border-color: #286044 !important;
+    color: #a7f3d0 !important;
+}
+
+body.dark-mode .message.error,
+body.dark-mode .status-message.error,
+body.dark-mode .error-message {
+    background: #351b22 !important;
+    border-color: #7f2939 !important;
+    color: #fecdd3 !important;
+}
+
+body.dark-mode .status-message.loading {
+    background: #20264a !important;
+    border-color: #4652a5 !important;
+    color: #c7d2fe !important;
+}
+
+/* Wellness / AI special blocks */
+body.dark-mode .disclaimer {
+    background: #29251a !important;
+    border-color: #665522 !important;
+}
+
+body.dark-mode .disclaimer p {
+    color: #e8d9a5 !important;
+}
+
+body.dark-mode .support-section {
+    background: #14251d !important;
+    border-color: #28553b !important;
+}
+
+body.dark-mode .support-section p {
+    color: #b7d8c2 !important;
+}
+
+body.dark-mode .timetable-message {
+    background: #13291f !important;
+    border-color: #28553b !important;
+    color: #b7d8c2 !important;
+}
+
+body.dark-mode .risk-box.low {
+    background: #123025 !important;
+    border-color: #286044 !important;
+}
+
+body.dark-mode .risk-box.moderate {
+    background: #332b13 !important;
+    border-color: #665522 !important;
+}
+
+body.dark-mode .risk-box.high {
+    background: #351b22 !important;
+    border-color: #7f2939 !important;
+}
+
+/* Popup overlays */
+body.dark-mode .popup-overlay {
+    background: rgba(2, 6, 23, .72) !important;
+}
+
+/* Tables / canvas-adjacent text */
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    color: #e5e7eb !important;
+    border-color: #334155 !important;
+}
+
+@media (max-width: 700px) {
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 11px;
+    }
+}

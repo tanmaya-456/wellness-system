@@ -1,0 +1,598 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f7fb;
+
+    color: #172033;
+
+}
+
+
+.wearable-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+}
+
+
+.wearable-card {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(20, 30, 60, 0.08);
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.page-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.icon {
+
+    width: 60px;
+
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eef0ff;
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+}
+
+
+.page-header h1 {
+
+    margin: 0 0 10px;
+
+    font-size: 32px;
+
+}
+
+
+.page-header p {
+
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   CONNECTION
+========================================================= */
+
+.connection-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    margin-bottom: 30px;
+
+    background: #f5f6ff;
+
+    border-radius: 14px;
+
+}
+
+
+.connection-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+
+}
+
+
+.connection-card strong {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+}
+
+
+.connection-card span {
+
+    display: block;
+
+    color: #737b8b;
+
+    font-size: 12px;
+
+}
+
+
+.status {
+
+    margin-left: auto;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d7dbe5;
+
+    border-radius: 10px;
+
+    background: white;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.1);
+
+}
+
+
+.unit-input {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.unit-input input {
+
+    flex: 1;
+
+}
+
+
+.unit-input span {
+
+    width: 75px;
+
+    color: #737b8b;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.primary-button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.primary-button:hover {
+
+    background: #4338ca;
+
+}
+
+
+.primary-button:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+
+    min-height: 20px;
+
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+
+.message.error {
+
+    color: #dc2626;
+
+}
+
+
+/* =========================================================
+   RECORDS
+========================================================= */
+
+.records-section {
+
+    margin-top: 35px;
+
+}
+
+
+.records-section h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 20px;
+
+}
+
+
+.record {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+
+    padding: 15px;
+
+    margin-bottom: 10px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #fafbff;
+
+}
+
+
+.record-item {
+
+    text-align: center;
+
+}
+
+
+.record-item span {
+
+    display: block;
+
+    color: #7b8190;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.record-item strong {
+
+    font-size: 14px;
+
+}
+
+
+.record-date {
+
+    grid-column: 1 / -1;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+}
+
+
+.empty {
+
+    color: #8a91a0;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   POPUP
+========================================================= */
+
+.popup-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(15, 23, 42, 0.45);
+
+    z-index: 1000;
+
+}
+
+
+.popup-overlay.show {
+
+    display: flex;
+
+}
+
+
+.popup-card {
+
+    width: 90%;
+
+    max-width: 420px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.2);
+
+}
+
+
+.popup-icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+}
+
+
+.popup-card h2 {
+
+    margin: 0 0 10px;
+
+}
+
+
+.popup-card p {
+
+    margin: 0 0 20px;
+
+    color: #6b7280;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.back-link {
+
+    display: block;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #59627a;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+}
+
+
+.back-link:hover {
+
+    color: #4f46e5;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .wearable-card {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 27px;
+
+    }
+
+
+    .connection-card {
+
+        align-items: flex-start;
+
+    }
+
+
+    .status {
+
+        font-size: 10px;
+
+    }
+
+
+    .record {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}

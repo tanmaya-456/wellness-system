@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Daily Habits | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="habits.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="habits-container">
+
+        <div class="habits-card">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div class="icon">
+                    🌱
+                </div>
+
+                <h1>
+                    Daily Habits
+                </h1>
+
+                <p>
+                    Track the small things that shape your
+                    everyday wellbeing.
+                </p>
+
+            </div>
+
+
+            <!-- HABITS FORM -->
+
+            <form id="habitsForm">
+
+
+                <!-- STUDY -->
+
+                <div class="habit-item">
+
+                    <div class="habit-icon">
+                        📚
+                    </div>
+
+                    <div class="habit-info">
+
+                        <label for="studyMinutes">
+                            Study Time
+                        </label>
+
+                        <span>
+                            How much time did you study today?
+                        </span>
+
+                    </div>
+
+                    <div class="habit-input">
+
+                        <input
+                            type="number"
+                            id="studyMinutes"
+                            min="0"
+                            placeholder="0"
+                            required
+                        >
+
+                        <small>
+                            min
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXERCISE -->
+
+                <div class="habit-item">
+
+                    <div class="habit-icon">
+                        🏃
+                    </div>
+
+                    <div class="habit-info">
+
+                        <label for="exerciseMinutes">
+                            Exercise
+                        </label>
+
+                        <span>
+                            Time spent exercising or being physically active.
+                        </span>
+
+                    </div>
+
+                    <div class="habit-input">
+
+                        <input
+                            type="number"
+                            id="exerciseMinutes"
+                            min="0"
+                            placeholder="0"
+                            required
+                        >
+
+                        <small>
+                            min
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WATER -->
+
+                <div class="habit-item">
+
+                    <div class="habit-icon">
+                        💧
+                    </div>
+
+                    <div class="habit-info">
+
+                        <label for="waterGlasses">
+                            Water
+                        </label>
+
+                        <span>
+                            How many glasses of water did you drink?
+                        </span>
+
+                    </div>
+
+                    <div class="habit-input">
+
+                        <input
+                            type="number"
+                            id="waterGlasses"
+                            min="0"
+                            placeholder="0"
+                            required
+                        >
+
+                        <small>
+                            glasses
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEDITATION -->
+
+                <div class="habit-item">
+
+                    <div class="habit-icon">
+                        🧘
+                    </div>
+
+                    <div class="habit-info">
+
+                        <label for="meditationMinutes">
+                            Meditation
+                        </label>
+
+                        <span>
+                            Time spent relaxing, meditating or mindfulness.
+                        </span>
+
+                    </div>
+
+                    <div class="habit-input">
+
+                        <input
+                            type="number"
+                            id="meditationMinutes"
+                            min="0"
+                            placeholder="0"
+                            required
+                        >
+
+                        <small>
+                            min
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEALS -->
+
+                <div class="habit-item">
+
+                    <div class="habit-icon">
+                        🍽️
+                    </div>
+
+                    <div class="habit-info">
+
+                        <label for="mealsCount">
+                            Meals
+                        </label>
+
+                        <span>
+                            Number of proper meals you had today.
+                        </span>
+
+                    </div>
+
+                    <div class="habit-input">
+
+                        <input
+                            type="number"
+                            id="mealsCount"
+                            min="0"
+                            max="10"
+                            placeholder="0"
+                            required
+                        >
+
+                        <small>
+                            meals
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    id="saveHabitsButton"
+                    class="primary-button"
+                >
+                    Save Today's Habits
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- SUCCESS POPUP -->
+
+            <div
+                id="successPopup"
+                class="popup-overlay"
+            >
+
+                <div class="popup-card">
+
+                    <div class="popup-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Habits Saved!
+                    </h2>
+
+                    <p>
+                        Your daily habits have been recorded successfully.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="dashboardButton"
+                        class="primary-button"
+                    >
+                        Back to Dashboard
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- BACK -->
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="habits.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

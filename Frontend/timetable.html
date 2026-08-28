@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Timetable | Student Wellness System</title>
+
+    <link
+        rel="stylesheet"
+        href="timetable.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+<div class="timetable-container">
+
+
+    <!-- =====================================================
+         BACK
+    ====================================================== -->
+
+    <a
+        href="dashboard.html"
+        class="back-link"
+    >
+        ← Dashboard
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="page-header">
+
+        <p class="eyebrow">
+            YOUR SCHEDULE
+        </p>
+
+        <h1>
+            Timetable
+        </h1>
+
+        <p>
+            Organize your classes, routine and daily schedule in one place.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         UPLOAD TIMETABLE
+    ====================================================== -->
+
+    <section class="upload-card">
+
+        <div class="upload-icon">
+            📸
+        </div>
+
+
+        <div class="upload-content">
+
+            <h2>
+                Import your timetable
+            </h2>
+
+            <p>
+                Upload a photo of your timetable. We'll extract the schedule for you.
+            </p>
+
+
+            <input
+                type="file"
+                id="timetableFile"
+                accept="image/png,image/jpeg,image/webp"
+                hidden
+            >
+
+
+            <button
+                type="button"
+                id="uploadButton"
+                class="primary-button"
+            >
+                Upload Timetable
+            </button>
+
+
+            <p
+                id="selectedFile"
+                class="selected-file"
+                style="display:none;"
+            >
+            </p>
+
+
+            <button
+                type="button"
+                id="analyzeButton"
+                class="secondary-button"
+                style="display:none;"
+            >
+                Analyze Timetable
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATUS
+    ====================================================== -->
+
+    <div
+        id="statusMessage"
+        class="status-message"
+    >
+    </div>
+
+
+    <!-- =====================================================
+         EXTRACTED TIMETABLE
+    ====================================================== -->
+
+    <section
+        id="previewSection"
+        class="preview-section"
+        style="display:none;"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    AI EXTRACTION
+                </p>
+
+                <h2>
+                    Review extracted timetable
+                </h2>
+
+                <p>
+                    Check and edit the information before saving it.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="eventsContainer"
+            class="events-container"
+        >
+        </div>
+
+
+        <div class="change-actions">
+
+            <button
+                type="button"
+                id="cancelPreviewButton"
+                class="outline-button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                type="button"
+                id="saveExtractedButton"
+                class="primary-button"
+            >
+                Save Timetable
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WEEKLY SCHEDULE
+    ====================================================== -->
+
+    <section class="schedule-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    WEEKLY SCHEDULE
+                </p>
+
+                <h2>
+                    My timetable
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addClassButton"
+                class="outline-button"
+            >
+                + Add class
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADD CLASS FORM
+        ================================================== -->
+
+        <div
+            id="classForm"
+            class="change-form"
+            style="display:none;"
+        >
+
+            <h3>
+                Add a class
+            </h3>
+
+
+            <div class="change-grid">
+
+
+                <div>
+
+                    <label>
+                        Day
+                    </label>
+
+                    <select id="classDay">
+
+                        <option value="Monday">
+                            Monday
+                        </option>
+
+                        <option value="Tuesday">
+                            Tuesday
+                        </option>
+
+                        <option value="Wednesday">
+                            Wednesday
+                        </option>
+
+                        <option value="Thursday">
+                            Thursday
+                        </option>
+
+                        <option value="Friday">
+                            Friday
+                        </option>
+
+                        <option value="Saturday">
+                            Saturday
+                        </option>
+
+                        <option value="Sunday">
+                            Sunday
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="classSubject"
+                        placeholder="e.g. Mathematics"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Start time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="classStart"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        End time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="classEnd"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="classLocation"
+                        placeholder="Optional"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="change-actions">
+
+                <button
+                    type="button"
+                    id="cancelClassButton"
+                    class="outline-button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="saveClassButton"
+                    class="primary-button"
+                >
+                    Save Class
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SAVED TIMETABLE
+        ================================================== -->
+
+        <div
+            id="scheduleContainer"
+            class="schedule-container"
+        >
+
+            <div class="empty-state">
+
+                <div>
+                    📅
+                </div>
+
+                <p>
+                    No classes added yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DAILY CHANGES
+    ====================================================== -->
+
+    <section class="schedule-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    DAILY CHANGES
+                </p>
+
+                <h2>
+                    Changes for today
+                </h2>
+
+                <p>
+                    Add cancellations, extra classes or schedule changes without changing your regular timetable.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addChangeButton"
+                class="outline-button"
+            >
+                + Add change
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CHANGE FORM
+        ================================================== -->
+
+        <div
+            id="changeForm"
+            class="change-form"
+            style="display:none;"
+        >
+
+            <h3>
+                Add a schedule change
+            </h3>
+
+
+            <div class="change-grid">
+
+
+                <div>
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="changeDate"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Change type
+                    </label>
+
+                    <select id="changeType">
+
+                        <option value="cancelled">
+                            Cancelled class
+                        </option>
+
+                        <option value="extra">
+                            Extra class
+                        </option>
+
+                        <option value="modified">
+                            Modified class
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        id="changeSubject"
+                        placeholder="e.g. Mathematics"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="changeLocation"
+                        placeholder="Optional"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Start time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="changeStart"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        End time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="changeEnd"
+                    >
+
+                </div>
+
+
+                <div class="change-full">
+
+                    <label>
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="changeNotes"
+                        placeholder="Optional details..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="change-actions">
+
+                <button
+                    type="button"
+                    id="cancelChangeButton"
+                    class="outline-button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="saveChangeButton"
+                    class="primary-button"
+                >
+                    Save Change
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             TODAY'S CHANGES
+        ================================================== -->
+
+        <div
+            id="changesContainer"
+            class="changes-container"
+        >
+
+            <div class="empty-state">
+
+                <div>
+                    📅
+                </div>
+
+                <p>
+                    No changes for today.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PERSONAL ROUTINE
+    ====================================================== -->
+
+    <section class="schedule-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    PERSONAL ROUTINE
+                </p>
+
+                <h2>
+                    Daily routine
+                </h2>
+
+                <p>
+                    Optional activities outside your classes.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="addRoutineButton"
+                class="outline-button"
+            >
+                + Add routine
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ROUTINE FORM
+        ================================================== -->
+
+        <div
+            id="routineForm"
+            class="change-form"
+            style="display:none;"
+        >
+
+            <h3>
+                Add routine activity
+            </h3>
+
+
+            <div class="change-grid">
+
+
+                <div>
+
+                    <label>
+                        Activity
+                    </label>
+
+                    <select id="routineType">
+
+                        <option value="Sleep">
+                            😴 Sleep
+                        </option>
+
+                        <option value="Study">
+                            📚 Study
+                        </option>
+
+                        <option value="Exercise">
+                            🏃 Exercise
+                        </option>
+
+                        <option value="Breakfast">
+                            🍳 Breakfast
+                        </option>
+
+                        <option value="Lunch">
+                            🍛 Lunch
+                        </option>
+
+                        <option value="Dinner">
+                            🍽️ Dinner
+                        </option>
+
+                        <option value="Meditation">
+                            🧘 Meditation
+                        </option>
+
+                        <option value="Other">
+                            📌 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Activity name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="routineName"
+                        placeholder="e.g. Morning study"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        Start time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="routineStart"
+                    >
+
+                </div>
+
+
+                <div>
+
+                    <label>
+                        End time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="routineEnd"
+                    >
+
+                </div>
+
+
+                <div class="change-full">
+
+                    <label>
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="routineNotes"
+                        placeholder="Optional..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <div class="change-actions">
+
+                <button
+                    type="button"
+                    id="cancelRoutineButton"
+                    class="outline-button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="button"
+                    id="saveRoutineButton"
+                    class="primary-button"
+                >
+                    Save Routine
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ROUTINE LIST
+        ================================================== -->
+
+        <div
+            id="routineContainer"
+            class="changes-container"
+        >
+
+            <div class="empty-state">
+
+                <div>
+                    🌱
+                </div>
+
+                <p>
+                    Add sleep, meals, study, exercise or other activities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script src="timetable.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>

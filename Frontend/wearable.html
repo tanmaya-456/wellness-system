@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Wearable Data | Student Wellness</title>
+
+    <link
+        rel="stylesheet"
+        href="wearable.css"
+    >
+
+    <link rel="stylesheet" href="theme.css">
+
+</head>
+
+
+<body>
+
+    <main class="wearable-container">
+
+        <div class="wearable-card">
+
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <div class="icon">
+                    ⌚
+                </div>
+
+                <h1>
+                    Wearable Data
+                </h1>
+
+                <p>
+                    Connect your physical activity and sleep
+                    data to your wellness profile.
+                </p>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="connection-card">
+
+                <div class="connection-icon">
+                    ⌚
+                </div>
+
+                <div>
+
+                    <strong>
+                        Wearable Data
+                    </strong>
+
+                    <span>
+                        Manual / imported data
+                    </span>
+
+                </div>
+
+                <div class="status">
+                    Available
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <form id="wearableForm">
+
+
+                <!-- SOURCE -->
+
+                <div class="form-group">
+
+                    <label for="source">
+                        Data Source
+                    </label>
+
+                    <select
+                        id="source"
+                        required
+                    >
+
+                        <option value="">
+                            Select source
+                        </option>
+
+                        <option value="manual">
+                            Manual entry
+                        </option>
+
+                        <option value="smartwatch">
+                            Smartwatch
+                        </option>
+
+                        <option value="fitness_band">
+                            Fitness Band
+                        </option>
+
+                        <option value="health_app">
+                            Health App
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SLEEP -->
+
+                <div class="form-group">
+
+                    <label for="sleepHours">
+                        😴 Sleep
+                    </label>
+
+                    <div class="unit-input">
+
+                        <input
+                            type="number"
+                            id="sleepHours"
+                            min="0"
+                            max="24"
+                            step="0.1"
+                            placeholder="7.5"
+                        >
+
+                        <span>
+                            hours
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- STEPS -->
+
+                <div class="form-group">
+
+                    <label for="steps">
+                        🚶 Steps
+                    </label>
+
+                    <div class="unit-input">
+
+                        <input
+                            type="number"
+                            id="steps"
+                            min="0"
+                            placeholder="8000"
+                        >
+
+                        <span>
+                            steps
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEART RATE -->
+
+                <div class="form-group">
+
+                    <label for="heartRate">
+                        ❤️ Average Heart Rate
+                    </label>
+
+                    <div class="unit-input">
+
+                        <input
+                            type="number"
+                            id="heartRate"
+                            min="30"
+                            max="220"
+                            placeholder="75"
+                        >
+
+                        <span>
+                            bpm
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESTING HEART RATE -->
+
+                <div class="form-group">
+
+                    <label for="restingHeartRate">
+                        💓 Resting Heart Rate
+                    </label>
+
+                    <div class="unit-input">
+
+                        <input
+                            type="number"
+                            id="restingHeartRate"
+                            min="30"
+                            max="150"
+                            placeholder="65"
+                        >
+
+                        <span>
+                            bpm
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EXERCISE -->
+
+                <div class="form-group">
+
+                    <label for="exerciseMinutes">
+                        🏃 Exercise
+                    </label>
+
+                    <div class="unit-input">
+
+                        <input
+                            type="number"
+                            id="exerciseMinutes"
+                            min="0"
+                            placeholder="30"
+                        >
+
+                        <span>
+                            minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="saveButton"
+                    class="primary-button"
+                >
+                    Save Wearable Data
+                </button>
+
+            </form>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="message"
+                class="message"
+            ></div>
+
+
+            <!-- RECENT DATA -->
+
+            <section class="records-section">
+
+                <h2>
+                    Recent Data
+                </h2>
+
+                <div id="recordsContainer">
+
+                    <p class="empty">
+                        No wearable data recorded yet.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- SUCCESS POPUP -->
+
+            <div
+                id="successPopup"
+                class="popup-overlay"
+            >
+
+                <div class="popup-card">
+
+                    <div class="popup-icon">
+                        ✓
+                    </div>
+
+                    <h2>
+                        Data Saved!
+                    </h2>
+
+                    <p>
+                        Your wearable data has been recorded successfully.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="closePopup"
+                        class="primary-button"
+                    >
+                        Continue
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="dashboard.html"
+                class="back-link"
+            >
+                ← Back to Dashboard
+            </a>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="wearable.js"></script>
+
+    <script src="theme.js"></script>
+
+</body>
+
+</html>
