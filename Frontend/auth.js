@@ -57,12 +57,10 @@ if (registerButton) {
                     .value
                     .trim();
 
-
             const password =
                 document
                     .getElementById("password")
                     .value;
-
 
             const confirmPassword =
                 document
@@ -81,7 +79,6 @@ if (registerButton) {
                 );
 
                 return;
-
             }
 
 
@@ -92,7 +89,6 @@ if (registerButton) {
                 );
 
                 return;
-
             }
 
 
@@ -103,7 +99,6 @@ if (registerButton) {
                 );
 
                 return;
-
             }
 
 
@@ -114,12 +109,11 @@ if (registerButton) {
                 );
 
                 return;
-
             }
 
 
             // ---------------------------------------------
-            // DISABLE BUTTON
+            // DISABLE REGISTER BUTTON
             // ---------------------------------------------
 
             registerButton.disabled = true;
@@ -170,20 +164,17 @@ if (registerButton) {
                     );
 
                     return;
-
                 }
 
-
-                // ---------------------------------------------
-                // REGISTRATION SUCCESS
-                // ---------------------------------------------
 
                 console.log(
                     "Registration successful."
                 );
 
 
-                // Hide normal message
+                // ---------------------------------------------
+                // CLEAR MESSAGE
+                // ---------------------------------------------
 
                 if (message) {
 
@@ -191,26 +182,31 @@ if (registerButton) {
 
                     message.className =
                         "message";
+                }
+
+
+                // ---------------------------------------------
+                // CLEAR FORM
+                // ---------------------------------------------
+
+                if (registerForm) {
+
+                    registerForm.reset();
 
                 }
 
 
-                // Clear form
-
-                document
-                    .getElementById("registerForm")
-                    .reset();
-
-
-                // SHOW POPUP
+                // ---------------------------------------------
+                // SHOW SUCCESS POPUP
+                // ---------------------------------------------
 
                 if (successPopup) {
 
                     successPopup.classList.add(
                         "show"
                     );
-
                 }
+
 
             } catch (error) {
 
@@ -224,6 +220,7 @@ if (registerButton) {
                     "Unable to connect to the server."
                 );
 
+
             } finally {
 
                 registerButton.disabled =
@@ -231,13 +228,13 @@ if (registerButton) {
 
                 registerButton.textContent =
                     "Create Account";
-
             }
 
         }
     );
 
 }
+
 
 // =========================================================
 // CONTINUE TO LOGIN
@@ -284,6 +281,30 @@ if (loginForm) {
                     .value;
 
 
+            // ---------------------------------------------
+            // LOGIN BUTTON
+            // ---------------------------------------------
+
+            const loginButton =
+                loginForm.querySelector(
+                    "button[type='submit']"
+                );
+
+
+            // ---------------------------------------------
+            // SHOW LOADING STATE
+            // ---------------------------------------------
+
+            if (loginButton) {
+
+                loginButton.disabled = true;
+
+                loginButton.textContent =
+                    "Logging in...";
+
+            }
+
+
             try {
 
                 const formData =
@@ -301,6 +322,10 @@ if (loginForm) {
                     password
                 );
 
+
+                // ---------------------------------------------
+                // LOGIN REQUEST
+                // ---------------------------------------------
 
                 const response =
                     await fetch(
@@ -327,6 +352,10 @@ if (loginForm) {
                     await response.json();
 
 
+                // ---------------------------------------------
+                // LOGIN FAILED
+                // ---------------------------------------------
+
                 if (!response.ok) {
 
                     showMessage(
@@ -335,7 +364,6 @@ if (loginForm) {
                     );
 
                     return;
-
                 }
 
 
@@ -368,6 +396,23 @@ if (loginForm) {
                 showMessage(
                     "Unable to connect to the server."
                 );
+
+
+            } finally {
+
+                // ---------------------------------------------
+                // RESTORE LOGIN BUTTON
+                // ---------------------------------------------
+
+                if (loginButton) {
+
+                    loginButton.disabled =
+                        false;
+
+                    loginButton.textContent =
+                        "Login";
+
+                }
 
             }
 
