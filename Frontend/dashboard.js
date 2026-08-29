@@ -134,7 +134,7 @@ async function loadWellness() {
             await apiRequest(
                 "/api/wellness/history"
             );
-
+            window.cachedWellnessRecords = records;
 
         if (!records) return;
 
@@ -719,20 +719,18 @@ loadWellness();
 // REDRAW CHART WHEN WINDOW RESIZES
 // =========================================================
 
-let chartResizeTimer;
-
 window.addEventListener("resize", function () {
-    clearTimeout(chartResizeTimer);
+    if (typeof drawChart === "function") {
+        const chart = document.querySelector("#wellnessChart");
 
-    chartResizeTimer = setTimeout(function () {
-        apiRequest("/api/wellness/history")
-            .then(records => {
-                if (records) drawChart(records);
-            })
-            .catch(error => {
-                console.error("Chart resize error:", error);
-            });
-    }, 180);
+        if (chart) {
+            const records = window.cachedWellnessRecords;
+
+            if (records) {
+                drawChart(records);
+            }
+        }
+    }
 });
 
 // =========================================================
