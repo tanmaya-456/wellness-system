@@ -7,3 +7,4 @@ passlib
 google-genai
 python-multipart
 pwdlib[argon2]
+psycopg2-binary
